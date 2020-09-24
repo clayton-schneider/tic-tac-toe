@@ -21,7 +21,7 @@ const Game = () => {
     if (move === history.length - 1) {
       return (
         <li key={move}>
-          <button onClick={() => jumpTo(move)}>
+          <button className="btn" onClick={() => jumpTo(move)}>
             <span className="bold">{desc}</span>
           </button>
         </li>
@@ -29,7 +29,9 @@ const Game = () => {
     } else {
       return (
         <li key={move}>
-          <button onClick={() => jumpTo(move)}>{desc}</button>
+          <button className="btn" onClick={() => jumpTo(move)}>
+            {desc}
+          </button>
         </li>
       );
     }
@@ -55,7 +57,7 @@ const Game = () => {
       </div>
       <div className="game-info">
         <div>{status}</div>
-        <button onClick={toggleAsc}>
+        <button className="btn" onClick={toggleAsc}>
           {state.isAsc ? 'Ascending' : 'Descending'}
         </button>
         <ol>{moves}</ol>
